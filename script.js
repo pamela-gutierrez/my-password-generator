@@ -10,7 +10,7 @@ var numberValue = "0123456789"
 var characterCount //This will be determined within the function below depending on the user's choices.
 var passwordValue = ""
 // If the user chooses all three character options for their password
-passwordValue = upperCaseValue + lowerCaseValue + specialCharacterValue;
+passwordValue = upperCaseValue + lowerCaseValue + specialCharacterValue + numberValue;
 
 // This is every possible password value if the user selects at least uppercase letters
 passwordValue = upperCaseValue;
@@ -19,12 +19,19 @@ passwordValue = upperCaseValue + lowerCaseValue + numberValue;
 passwordValue = upperCaseValue + lowerCaseValue;
 passwordValue = upperCaseValue + specialCharacterValue + numberValue;
 passwordValue = upperCaseValue + specialCharacterValue;
+
 // These are the remaining possible password values if the user selects at least lowercase letters
 passwordValue = lowerCaseValue;
-passwordValue = lowerCase + specicalCharacterValue
+passwordValue = lowerCaseValue + specicalCharacterValue
+passwordValue = lowerCaseValue + numberValue
+passwordValue = lowerCaseValue + specialCharacterValue + numberValue
 
 // This is the remaining possible password if the user selects just special characters
-passwordValue = specialCharacterValue
+passwordValue = specialCharacterValue 
+passwordValue = specialCharacterValue + numberValue
+
+// This is the remaining possible password if the user selects just number characters 
+passwordValue = numberValue
 
 function writePassword() { 
  var characterCount = prompt("How many characters would you like your password to contain?")
