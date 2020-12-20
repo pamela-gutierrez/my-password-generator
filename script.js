@@ -2,9 +2,32 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
-var password = [];
-var characterCount = prompt("How many characters would you like your password to contain?")
+// var password 
+var upperCaseValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var lowerCaseValue = "abcdefghijklmnopqrstuvwxyz"
+var specicalCharacterValue = "!@#$%^&*()"
+var numberValue = "0123456789"
+var characterCount //This will be determined within the function below depending on the user's choices.
+var passwordValue = ""
+// If the user chooses all three character options for their password
+passwordValue = upperCaseValue + lowerCaseValue + specialCharacterValue;
+
+// This is every possible password value if the user selects at least uppercase letters
+passwordValue = upperCaseValue;
+passwordValue = upperCaseValue + numberValue;
+passwordValue = upperCaseValue + lowerCaseValue + numberValue;
+passwordValue = upperCaseValue + lowerCaseValue;
+passwordValue = upperCaseValue + specialCharacterValue + numberValue;
+passwordValue = upperCaseValue + specialCharacterValue;
+// These are the remaining possible password values if the user selects at least lowercase letters
+passwordValue = lowerCaseValue;
+passwordValue = lowerCase + specicalCharacterValue
+
+// This is the remaining possible password if the user selects just special characters
+passwordValue = specialCharacterValue
+
+function writePassword() { 
+ var characterCount = prompt("How many characters would you like your password to contain?")
 
 if (characterCount <= 7){
     alert ("Password must be at least 8 characters.")
@@ -15,22 +38,69 @@ if (characterCount <= 7){
     window.confirm("Do you want to include lowercase characters?")
     window.confirm("Do you want to include special characters")    
   }
+  for (i = 0; i <= characterCount; i++)
+  password = ""
+  password + passwordValue.charAt(Math.floor(Math.random() * Math.floor(upperCaseValue.length - 1 )))
+ 
+  for (i = 0; i <= characterCount; i++)
+  password = ""
+  password + passwordValue.charAt(Math.floor(Math.random() * Math.floor(lowerCaseValue.length - 1 )))
 
-var upperCaseLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "I" ,"J" , "K" , "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var lowerCaseLetter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "t", "u", "v", "w", "x", "y", "z"];
-var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")" ];
+  for (i = 0; i <= characterCount; i++)
+  password = ""
+  password + passwordValue.charAt(Math.floor(Math.random() * Math.floor(specialCharacterValue.length - 1 )))
 
-  i
+  for (i = 0; i <= characterCount; i++)
+  password = ""
+  password + passwordValue.charAt(Math.floor(Math.random() * Math.floor(numberValue.length - 1 )))
+} 
 
-  var password = generatePassword();
+  // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-}
 
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
+
+
+
+// If no to all conditions alert "You must select at least one kind of character."
+
+// var upperCaseWanted = false;
+// var lowerCaseWanted = false;
+// var specialCharacterWanted = false;
+
+// if (upperCaseQuestion === true) {
+//   upperCaseWanted = true
+// }
+
+// if (lowerCaseQuestion === true) {
+//   lowerCaseWanted = true
+// }
+
+// if (specialCharacter === true) {
+//   specialCharacter = true
+// }
+
+// }
+
+// var upperCaseQuestion = window.confirm("Do you want to include uppercase letters?")
+// var lowerCaseQuestion = window.confirm("Do you want lowercase letters?")
+
+
+
+
+
+
+
+// Take whatever number of characters the user selects in the character count and generate a password of that length. 
+// Need to put together a password made of character choices- numbers, upper and lower case letters, symbols.
+// Need to create an alert if the user doesn't confirm at least one of the character types. 
+// Push or return password comprised on all different characteristics. 
+
 
 
 

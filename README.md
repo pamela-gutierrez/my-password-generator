@@ -7,6 +7,7 @@ ______________
 ![Site](assets/password-generate-three.jpg)
 
 The generator requires certain base parameters such as a length of password between 8 and 129. Anything outside of these parameters will return an message defining the character length options. 
+
 ![Site](assets/password-generate-one.jpeg)
 
 ![Site](assets/password-generate-two.jpg) 
