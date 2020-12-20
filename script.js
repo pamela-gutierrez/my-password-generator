@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 // var password 
 var upperCaseValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var lowerCaseValue = "abcdefghijklmnopqrstuvwxyz"
-var specicalCharacterValue = "!@#$%^&*()"
+var specialCharacterValue = "!@#$%^&*()"
 var numberValue = "0123456789"
 var characterCount //This will be determined within the function below depending on the user's choices.
 var passwordValue = ""
@@ -22,7 +22,7 @@ passwordValue = upperCaseValue + specialCharacterValue;
 
 // These are the remaining possible password values if the user selects at least lowercase letters
 passwordValue = lowerCaseValue;
-passwordValue = lowerCaseValue + specicalCharacterValue
+passwordValue = lowerCaseValue + specialCharacterValue
 passwordValue = lowerCaseValue + numberValue
 passwordValue = lowerCaseValue + specialCharacterValue + numberValue
 
@@ -41,31 +41,38 @@ if (characterCount <= 7){
   } else if (characterCount >= 129){
     alert ("Password must be less than 129 characters.")
   } else {
-    window.confirm("Do you want to include uppercase characters?")
-    window.confirm("Do you want to include lowercase characters?")
-    window.confirm("Do you want to include special characters")    
+  var upperCaseQuestion = window.confirm("Do you want to include uppercase characters?")
+  var lowerCaseQuestion = window.confirm("Do you want to include lowercase characters?")
+  var specialCharacterQuestion = window.confirm("Do you want to include special characters")    
+  var numberQuestion = window.confirm("Do you want numbers?")
   }
-  for (i = 0; i <= characterCount; i++)
   password = ""
-  password + passwordValue.charAt(Math.floor(Math.random() * Math.floor(upperCaseValue.length - 1 )))
- 
-  for (i = 0; i <= characterCount; i++)
-  password = ""
-  password + passwordValue.charAt(Math.floor(Math.random() * Math.floor(lowerCaseValue.length - 1 )))
-
+  if (upperCaseQuestion === true){
+    for (i = 0; i <= characterCount; i++)
+    password = ""
+    password + passwordValue.charAt(Math.floor(Math.random() * Math.floor(upperCaseValue.length - 1 )))
+  }
+  if (lowerCaseQuestion === true){
+    for (i = 0; i <= characterCount; i++)
+    password = ""
+    password + passwordValue.charAt(Math.floor(Math.random() * Math.floor(lowerCaseValue.length - 1 )))
+  }
+  if (specialCharacterQuestion === true){
   for (i = 0; i <= characterCount; i++)
   password = ""
   password + passwordValue.charAt(Math.floor(Math.random() * Math.floor(specialCharacterValue.length - 1 )))
-
+  }
+  if (numberQuestion === true){
   for (i = 0; i <= characterCount; i++)
   password = ""
   password + passwordValue.charAt(Math.floor(Math.random() * Math.floor(numberValue.length - 1 )))
+  }
 } 
 
   // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = password
 
 
 // Add event listener to generate button
